@@ -40,7 +40,6 @@ module.exports =   {
             res.errorStatusCode = 403
             throw new Error('NoPermission: You must login and to be Admin')
         }
-    }
-
     },
-}
+
+    }
