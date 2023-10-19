@@ -4,42 +4,35 @@
 ------------------------------------------------------- */
 // Middleware: permissions
 
-module.exports =   {
+module.exports = {
 
+    isLogin: (req, res, next) => {
 
-    isLogin : (req, res, next) => {
-    
-
-        isLogin: (req, res, next) => {
-
-            if (req.user) {
-                next()
-            } else {
-                res.errorStatusCode = 403
-                throw new Error('NoPermission: You must login.')
-            }
+        if (req.user) {
+            next()
+        } else {
+            res.errorStatusCode = 403
+            throw new Error('NoPermission: You must login.')
         }
     },
-    isStaff : (req, res, next) =>{
-        isLogin: (req, res, next) => {
 
-            if (req.user && req.user.isStaff) {
-                next()
-            } else {
-                res.errorStatusCode = 403
-                throw new Error('NoPermission: You must login and to be Staff.')
-            }
+    isStaffOrAdmin: (req, res, next) => {
+
+        if (req.user && (req.user.isStaff || req.user.isAdmin)) {
+            next()
+        } else {
+            res.errorStatusCode = 403
+            throw new Error('NoPermission: You must login and to be Staff.')
         }
-
     },
-    isAdmin :(req, res, next) =>{
+
+    isAdmin: (req, res, next) => {
 
         if (req.user && req.user.isAdmin) {
             next()
         } else {
             res.errorStatusCode = 403
-            throw new Error('NoPermission: You must login and to be Admin')
+            throw new Error('NoPermission: You must login and to be Admin.')
         }
     },
-
-    }
+}

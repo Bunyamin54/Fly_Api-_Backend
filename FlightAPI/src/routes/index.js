@@ -4,12 +4,9 @@
 ------------------------------------------------------- */
 const router = require('express').Router()
 /* ------------------------------------------------------- */
-// routes/user:
+// routes/:
 
-
-
-// URL: /users
-
+// URL: /
 
 // auth:
 router.use('/auth', require('./auth'))
@@ -24,7 +21,5 @@ router.use('/reservations', require('./reservation'))
 // document:
 router.use('/documents', require('./document'))
 
-
-app.use('/', require('./src/routes/'))
 /* ------------------------------------------------------- */
 module.exports = router

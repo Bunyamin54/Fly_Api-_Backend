@@ -50,19 +50,25 @@ app.all('/', (req, res) => {
     })
 })
 
-// auth:
+//? Move to routes/index.js:
+// // auth:
 // app.use('/auth', require('./src/routes/auth'))
-// user:
+// // user:
 // app.use('/users', require('./src/routes/user'))
-// flight:
+// // flight:
 // app.use('/flights', require('./src/routes/flight'))
-// passenger:
+// // passenger:
 // app.use('/passengers', require('./src/routes/passenger'))
-// reservation:
+// // reservation:
 // app.use('/reservations', require('./src/routes/reservation'))
-// document:
+// // document:
 // app.use('/documents', require('./src/routes/document'))
 
+// Routes:
+// app.use('/', require('./src/routes/index.js'))
+// app.use('/', require('./src/routes/index'))
+// app.use('/', require('./src/routes/'))
+app.use(require('./src/routes/'))
 
 /* ------------------------------------------------------- */
 
