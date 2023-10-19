@@ -1,4 +1,3 @@
-
 "use strict"
 /* -------------------------------------------------------
     NODEJS EXPRESS | CLARUSWAY FullStack Team
@@ -17,27 +16,25 @@ const { mongoose } = require('../configs/dbConnection')
 
 const PassengerSchema = new mongoose.Schema({
 
-    firstName:{
+    firstName: {
         type: String,
-        trim:true,
+        trim: true,
         required: true,
-
-    },
-    
-    lastName:{
-        type: String,
-        trim:true,
-        required: true,
-        
     },
 
-     gender : {
+    lastName: {
+        type: String,
+        trim: true,
+        required: true,
+    },
 
-        type:String,
-        enum: [null,'M',   'F'],
+    gender: {
+        type: String,
+        enum: [null, 'M', 'F'],
         default: null
-     },
-     email: {
+    },
+
+    email: {
         type: String,
         trim: true,
         required: [true, 'Email field must be required.'],
@@ -56,7 +53,6 @@ const PassengerSchema = new mongoose.Schema({
         ref: 'User',
         required: true
     },
-
 
 }, { collection: 'passengers', timestamps: true })
 

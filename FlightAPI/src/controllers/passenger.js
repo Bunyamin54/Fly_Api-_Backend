@@ -4,7 +4,7 @@
 ------------------------------------------------------- */
 // Passenger Controller:
 
-const Passenger = require('../models/Passenger')
+const Passenger = require('../models/passenger')
 
 module.exports = {
 
