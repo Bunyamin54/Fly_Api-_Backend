@@ -12,17 +12,17 @@ const router = require('express').Router()
 
 
 // auth:
-router.use('/auth', require('./src/routes/auth'))
+router.use('/auth', require('./auth'))
 // user:
-router.use('/users', require('./src/routes/user'))
+router.use('/users', require('./user'))
 // flight:
-router.use('/flights', require('./src/routes/flight'))
+router.use('/flights', require('./flight'))
 // passenger:
-router.use('/passengers', require('./src/routes/passenger'))
+router.use('/passengers', require('./passenger'))
 // reservation:
-router.use('/reservations', require('./src/routes/reservation'))
+router.use('/reservations', require('./reservation'))
 // document:
-router.use('/documents', require('./src/routes/document'))
+router.use('/documents', require('./document'))
 
 
 app.use('/', require('./src/routes/'))
